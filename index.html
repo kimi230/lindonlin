@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLOG</title>
+    <meta name="description" content="DLOG - Tech, Essay, Trend">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="site-header" id="header">
+            <div class="header-inner">
+                <a href="index.html" class="logo">DLOG</a>
+                <nav class="main-nav" id="nav">
+                    <a href="index.html?category=tech" class="nav-link" data-category="tech">TECH</a>
+                    <a href="index.html?category=essay" class="nav-link" data-category="essay">ESSAY</a>
+                    <a href="index.html?category=trend" class="nav-link" data-category="trend">TREND</a>
+                    <a href="about.html" class="nav-link">ABOUT</a>
+                </nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="site-main">
+            <!-- Hero Section (Featured Article) -->
+            <section class="hero">
+                <a href="articles/cleaning-and-cowardice.html" class="hero-link">
+                    <div class="hero-content">
+                        <span class="hero-category">ESSAY</span>
+                        <h1 class="hero-title">청소와 비겁함</h1>
+                        <p class="hero-excerpt">
+                            청소의 정의에서 출발하여, 눈에 보이는 문제를 외면하는 행위를 아크라시아와 의도적 무시로 분석하고 '비겁함'으로 재정의한 칼럼.
+                        </p>
+                        <div class="hero-meta">
+                            <time datetime="2026-02-01">2026.02.01</time>
+                            <span class="separator"></span>
+                            <span>8분</span>
+                        </div>
+                    </div>
+                </a>
+            </section>
+
+            <!-- Articles Grid -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Latest</h2>
+                    <div class="grid grid-2" id="articlesGrid">
+
+                        <!-- Card: LLM Comparison -->
+                        <a href="articles/llm-comparison-guide.html" class="article-card" data-category="tech">
+                            <div class="card-image">
+                                <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a1a1a 0%, #333 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;font-weight:700;">AI</div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">TECH</span>
+                                <h3 class="card-title">ChatGPT vs Claude vs Gemini vs Grok</h3>
+                                <p class="card-excerpt">2026년 1월 기준, 4대 LLM의 최신 모델, 가격, 실사용 차이를 정리한 실전 가이드.</p>
+                                <div class="card-meta">
+                                    <time datetime="2026-01-29">2026.01.29</time>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card: Gen Z Quality Lifestyle -->
+                        <a href="articles/gen-z-quality-lifestyle.html" class="article-card" data-category="trend">
+                            <div class="card-image">
+                                <div style="width:100%;height:100%;background:linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);display:flex;align-items:center;justify-content:center;color:#333;font-size:1.5rem;font-weight:600;">Gen Z</div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">TREND</span>
+                                <h3 class="card-title">질적 풍요의 시대</h3>
+                                <p class="card-excerpt">미국 Gen Z가 정의하는 '나' 중심의 삶. 공간, 관계, 기술, 소비 4개 축의 트렌드 분석.</p>
+                                <div class="card-meta">
+                                    <time datetime="2026-01-30">2026.01.30</time>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card: Korean Hiphop History -->
+                        <a href="articles/korean-hiphop-history.html" class="article-card" data-category="trend">
+                            <div class="card-image">
+                                <div style="width:100%;height:100%;background:linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:600;">HIP-HOP</div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">TREND</span>
+                                <h3 class="card-title">한국 힙합의 역사: 1989-2026</h3>
+                                <p class="card-excerpt">한국 힙합 30년 통사. 태동기부터 현재까지의 연대기와 구조적 분석.</p>
+                                <div class="card-meta">
+                                    <time datetime="2026-02-01">2026.02.01</time>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card: Construction AI -->
+                        <a href="articles/construction-ai-agent.html" class="article-card" data-category="tech">
+                            <div class="card-image">
+                                <div style="width:100%;height:100%;background:linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:600;">AGENT</div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">TECH</span>
+                                <h3 class="card-title">건설사 직원들이 AI에 더 잘 적응하는 이유</h3>
+                                <p class="card-excerpt">건설 프로젝트 매니징 경험이 AI 에이전트 관리 능력으로 직결된다는 분석.</p>
+                                <div class="card-meta">
+                                    <time datetime="2026-02-01">2026.02.01</time>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card: Dimensional Physics -->
+                        <a href="articles/dimensional-physics.html" class="article-card" data-category="essay">
+                            <div class="card-image">
+                                <div style="width:100%;height:100%;background:linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:600;">DIMENSION</div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">ESSAY</span>
+                                <h3 class="card-title">같은 하루가 달라지는 차원 물리학</h3>
+                                <p class="card-excerpt">물리학의 차원 개념을 빌려, 같은 삶이 다르게 느껴지는 이유를 설명한 칼럼.</p>
+                                <div class="card-meta">
+                                    <time datetime="2026-02-01">2026.02.01</time>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card: Hiphop Essay -->
+                        <a href="articles/hiphop-essay.html" class="article-card" data-category="essay">
+                            <div class="card-image">
+                                <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a1a1a 0%, #333 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:600;">HIPHOP</div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">ESSAY</span>
+                                <h3 class="card-title">난 왜 10년 넘게 힙합을 좋아할까</h3>
+                                <p class="card-excerpt">힙합 쇠퇴론에 대한 개인적 반론. 감시사회에서의 정서적 해방감을 논하는 에세이.</p>
+                                <div class="card-meta">
+                                    <time datetime="2026-01-31">2026.01.31</time>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card: LLM Memory -->
+                        <a href="articles/llm-memory-feature-off.html" class="article-card" data-category="tech">
+                            <div class="card-image">
+                                <div style="width:100%;height:100%;background:linear-gradient(135deg, #333 0%, #1a1a1a 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:600;">MEMORY</div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-category">TECH</span>
+                                <h3 class="card-title">LLM 메모리 기능을 끄세요</h3>
+                                <p class="card-excerpt">LLM 메모리 기능이 성능을 저하시키는 메커니즘과 더 나은 사용법.</p>
+                                <div class="card-meta">
+                                    <time datetime="2026-01-29">2026.01.29</time>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-logo">DLOG</div>
+                <nav class="footer-nav">
+                    <a href="index.html?category=tech">TECH</a>
+                    <a href="index.html?category=essay">ESSAY</a>
+                    <a href="index.html?category=trend">TREND</a>
+                    <a href="about.html">ABOUT</a>
+                </nav>
+                <p class="footer-text">&copy; 2026 DLOG. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

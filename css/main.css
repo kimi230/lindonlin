@@ -1,0 +1,15 @@
+/* ===========================================
+   DLOG - Main CSS Entry Point
+   GQ Korea inspired, Black & White minimal
+   =========================================== */
+
+/* Fonts */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap');
+
+/* Design System */
+@import 'variables.css';
+@import 'base.css';
+@import 'layout.css';
+@import 'components.css';
+@import 'article.css';

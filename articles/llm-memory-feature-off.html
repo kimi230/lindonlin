@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM 메모리 기능을 끄세요 — DLOG</title>
+    <meta name="description" content="LLM 메모리 기능이 성능을 저하시키는 메커니즘과 더 나은 사용법.">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="site-header" id="header">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">DLOG</a>
+                <nav class="main-nav" id="nav">
+                    <a href="../index.html?category=tech" class="nav-link active" data-category="tech">TECH</a>
+                    <a href="../index.html?category=essay" class="nav-link" data-category="essay">ESSAY</a>
+                    <a href="../index.html?category=trend" class="nav-link" data-category="trend">TREND</a>
+                    <a href="../about.html" class="nav-link">ABOUT</a>
+                </nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </header>
+
+        <main class="site-main">
+            <header class="article-header">
+                <div class="container">
+                    <a href="../index.html?category=tech" class="article-category">TECH</a>
+                    <h1 class="article-title">LLM 메모리 기능을 끄세요</h1>
+                    <p class="article-subtitle">메모리 기능은 당신의 AI를 더 똑똑하게 만드는 게 아니라 더 멍청하게 만들고 있다.</p>
+                    <div class="article-meta">
+                        <time datetime="2026-01-29">2026.01.29</time>
+                        <span class="separator"></span>
+                        <span>10분</span>
+                    </div>
+                </div>
+            </header>
+
+            <article class="article-content">
+                <h2>메모리 기능이 뭔데?</h2>
+                <p>ChatGPT, Claude, Gemini 등 주요 LLM 서비스들은 앞다투어 "메모리" 기능을 도입했다. 사용자의 이전 대화를 기억하고, 선호도를 저장하고, 과거 맥락을 유지한다. 언뜻 보면 완벽한 기능이다.</p>
+                <p>그런데 이 기능을 켜는 순간, <strong>당신은 성능을 대가로 지불하고 있다.</strong></p>
+                <p>기술적으로 메모리는 마법이 아니다. LLM은 본질적으로 무상태(stateless)다. "기억한다"는 것은 과거 대화에서 추출한 정보를 매 대화의 시스템 프롬프트에 다시 주입하는 것에 불과하다.</p>
+
+                <hr>
+
+                <h2>순수 모델이 가장 똑똑하다</h2>
+                <p>핵심은 단순하다. <strong>컨텍스트를 품지 않은 순수 모델이 가장 똑똑하다.</strong></p>
+                <p>2025년 10월 발표된 논문 "Context Length Alone Hurts LLM Performance"는 입력 길이만 늘려도 — 심지어 추가된 토큰이 의미 없는 공백이고, 정답이 질문 바로 앞에 있어도 — 성능이 <strong>13.9%에서 최대 85%까지 하락</strong>한다는 것을 증명했다.</p>
+                <p>비유하자면 이렇다. 시험을 보는데, 시험지 위에 지난 학기 필기노트를 펼쳐놓고 그 위에서 문제를 풀라는 것이다. 대부분은 관련이 없다. 그런데 그 노트가 시야에 들어오는 순간, 뇌는 그것을 무시하는 데도 에너지를 쓴다.</p>
+
+                <hr>
+
+                <h2>메모리가 성능을 깎는 세 가지 메커니즘</h2>
+
+                <h3>1. 어텐션 희석</h3>
+                <p>Transformer의 핵심인 Softmax Attention은 <strong>합이 1이 되는 고정된 어텐션 예산</strong>을 가진다. 메모리로 토큰이 추가되면 핵심 질문에 할당되는 어텐션이 물리적으로 줄어든다.</p>
+
+                <h3>2. 컨텍스트 오염</h3>
+                <p>방해 정보가 늘어날수록 정확도는 <strong>멱법칙(power-law)으로 하락</strong>한다. 메모리 기능이 주입하는 "이 사용자는 파이썬 개발자", "반려견 이름은 코코"는 자바스크립트 디버깅을 요청할 때 방해 정보다.</p>
+
+                <h3>3. 페르소나 고착</h3>
+                <p>메모리는 모델에게 일종의 페르소나를 강제한다. 당신이 이미 성장했더라도 모델은 계속 기초 수준의 답변을 내놓는다. 메모리는 과거에 고정되어 있지만, 당신의 필요는 매 순간 변한다.</p>
+
+                <hr>
+
+                <h2>연구가 말하는 숫자들</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>연구</th>
+                            <th>핵심 발견</th>
+                            <th>수치</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Context Length Alone Hurts (2025)</td>
+                            <td>입력 길이만으로 성능 하락</td>
+                            <td>13.9%~85% 하락</td>
+                        </tr>
+                        <tr>
+                            <td>GSM-DC (2025)</td>
+                            <td>방해 정보 → 추론 능력 하락</td>
+                            <td>GPT-4.1: 26%→2%</td>
+                        </tr>
+                        <tr>
+                            <td>에든버러/NVIDIA</td>
+                            <td>메모리 8배 축소 → 성능 유지</td>
+                            <td>추론 속도 향상</td>
+                        </tr>
+                        <tr>
+                            <td>BABILong</td>
+                            <td>GPT-4도 128K의 10%에서 저하 시작</td>
+                            <td>~12,800토큰</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h2>메모리 대신 해야 할 것</h2>
+                <ul>
+                    <li><strong>컨텍스트를 명시적으로 제공하라.</strong> 매번 필요한 정보를 직접 넘긴다.</li>
+                    <li><strong>Custom Instructions를 전략적으로 사용하라.</strong> 메모리와 달리 당신이 직접 큐레이션한 입력이다.</li>
+                    <li><strong>새 대화를 두려워하지 마라.</strong> 주제가 바뀌면 새 대화를 여는 것이 모델 성능에 유리하다.</li>
+                    <li><strong>프로젝트 단위로 컨텍스트를 관리하라.</strong> 업무, 취미, 개인 생활의 컨텍스트를 분리하라.</li>
+                </ul>
+
+                <hr>
+
+                <h2>결론</h2>
+                <p>성능과 편의 사이에서 당신이 무엇을 선택할지는 자유다. 하지만 그 선택이 <strong>정보에 기반한 선택</strong>이어야 한다.</p>
+                <p>순수한 모델에게, 명확한 질문을, 충분한 컨텍스트와 함께 던지는 것. 이것이 LLM에서 최고의 성능을 끌어내는 가장 확실한 방법이다.</p>
+                <p><strong>지금 당장 설정에 들어가서 메모리 기능을 꺼라. 당신의 AI가 더 똑똑해질 것이다.</strong></p>
+            </article>
+
+            <footer class="article-footer">
+                <div class="article-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">메모리</span>
+                    <span class="tag">프롬프트엔지니어링</span>
+                </div>
+            </footer>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-logo">DLOG</div>
+                <p class="footer-text">&copy; 2026 DLOG. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

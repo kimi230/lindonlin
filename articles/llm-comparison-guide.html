@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT vs Claude vs Gemini vs Grok — DLOG</title>
+    <meta name="description" content="2026년 1월 기준, 주요 LLM 4종의 최신 모델·가격·실사용 차이를 정리한 실전 가이드">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="site-header" id="header">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">DLOG</a>
+                <nav class="main-nav" id="nav">
+                    <a href="../index.html?category=tech" class="nav-link active" data-category="tech">TECH</a>
+                    <a href="../index.html?category=essay" class="nav-link" data-category="essay">ESSAY</a>
+                    <a href="../index.html?category=trend" class="nav-link" data-category="trend">TREND</a>
+                    <a href="../about.html" class="nav-link">ABOUT</a>
+                </nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="site-main">
+            <!-- Article Header -->
+            <header class="article-header">
+                <div class="container">
+                    <a href="../index.html?category=tech" class="article-category">TECH</a>
+                    <h1 class="article-title">ChatGPT vs Claude vs Gemini vs Grok</h1>
+                    <p class="article-subtitle">2026년 1월 기준, 주요 LLM 4종의 최신 모델·가격·실사용 차이를 정리한 실전 가이드</p>
+                    <div class="article-meta">
+                        <time datetime="2026-01-29">2026.01.29</time>
+                        <span class="separator"></span>
+                        <span>12분</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Article Content -->
+            <article class="article-content">
+                <h2>1. 들어가며 — 2026년, AI 춘추전국시대</h2>
+                <p>2026년 1월, AI 업계는 본격적인 세대교체를 마쳤다. OpenAI는 GPT-5.2를, Anthropic은 Claude 4.5 시리즈를, Google은 Gemini 3를, xAI는 Grok 4.1을 각각 배치했다. 불과 1년 전만 해도 "ChatGPT가 곧 AI"였던 시장에서 이제 네 개의 뚜렷한 선택지가 존재한다.</p>
+                <p>문제는 선택지가 많아진 만큼 혼란도 커졌다는 것이다. 벤치마크 점수만 보면 비슷비슷하고, 마케팅 문구는 모두 "가장 지능적인 AI"를 자처한다. 하지만 실제로 써보면 이 네 LLM은 설계 철학, 생태계, 가격 구조에서 뚜렷이 갈린다.</p>
+                <p>이 글의 전제는 단순하다: <strong>최고의 LLM은 없다. 내 작업에 맞는 LLM이 최고다.</strong></p>
+
+                <hr>
+
+                <h2>2. 한눈에 보는 4대 LLM</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>ChatGPT</th>
+                            <th>Claude</th>
+                            <th>Gemini</th>
+                            <th>Grok</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>최신 모델</strong></td>
+                            <td>GPT-5.2</td>
+                            <td>Claude 4.5</td>
+                            <td>Gemini 3</td>
+                            <td>Grok 4.1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>유료 시작가</strong></td>
+                            <td>$8/월</td>
+                            <td>$20/월</td>
+                            <td>$19.99/월</td>
+                            <td>$8/월</td>
+                        </tr>
+                        <tr>
+                            <td><strong>컨텍스트</strong></td>
+                            <td>128K</td>
+                            <td>200K</td>
+                            <td>1M</td>
+                            <td>128K</td>
+                        </tr>
+                        <tr>
+                            <td><strong>특화 영역</strong></td>
+                            <td>만능 통합</td>
+                            <td>코딩·장문</td>
+                            <td>구글 생태계</td>
+                            <td>실시간 데이터</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h2>3. 각 LLM의 정체성과 강점</h2>
+
+                <h3>ChatGPT — "단계별 지능을 고르는 만능 도구"</h3>
+                <p>OpenAI는 GPT-5.2에서 전략을 바꿨다. 하나의 만능 모델 대신, <strong>세 단계의 지능</strong>을 내놓았다.</p>
+                <ul>
+                    <li><strong>Instant</strong>: 일상적인 질문, 번역, 정보 검색. $8/월 Go 요금제로 접근 가능.</li>
+                    <li><strong>Thinking</strong>: 코딩, 문서 분석, 기획처럼 깊은 사고가 필요한 작업. $20/월 Plus.</li>
+                    <li><strong>Pro</strong>: 연구·수학·복잡한 추론. $200/월.</li>
+                </ul>
+                <p>ChatGPT의 진짜 강점은 <strong>통합 생태계</strong>다. 코드 인터프리터로 데이터를 즉시 실행하고, DALL-E로 이미지를 생성하고, Advanced Voice Mode로 실시간 음성 대화를 하고, Codex로 에이전틱 코딩을 수행한다 — 모두 하나의 대화 안에서.</p>
+
+                <h3>Claude — "코드와 장문의 장인"</h3>
+                <p>Anthropic의 Claude는 2026년 초 기준 <strong>엔터프라이즈 LLM 시장 점유율 32%로 1위</strong>를 차지했다. 코딩 벤치마크에서 업계 최고 수준이라는 평가가 정착됐고, 장문 처리와 지시 준수에서 뚜렷한 차별화를 유지한다.</p>
+                <p><strong>강점:</strong></p>
+                <ul>
+                    <li>코딩 벤치마크(SWE-bench) 최상위, Claude Code CLI로 터미널 직접 코딩</li>
+                    <li>200K 토큰 컨텍스트 — 단행본 1권을 한 번에 올려 분석 가능</li>
+                    <li>23,000단어 헌법 기반 지시 준수력 최고</li>
+                </ul>
+
+                <h3>Gemini — "구글 생태계의 두뇌"</h3>
+                <p>Google의 Gemini 3 Pro는 2025년 11월 출시 이후 <strong>월 6.5억 사용자</strong>를 확보하며 사용자 수에서 압도적 1위다.</p>
+                <p><strong>1M 토큰 컨텍스트.</strong> 현존 상용 모델 중 최대다. 1시간짜리 영상을 통째로 올려 분석하거나, 수십만 줄의 코드 레포지토리를 한 번에 넣을 수 있다.</p>
+
+                <h3>Grok — "실시간 세계와 연결된 AI"</h3>
+                <p>xAI의 Grok은 2026년 들어 장난감에서 진지한 경쟁자로 변모했다. Grok 4.1은 환각률을 12.09%에서 <strong>4.22%로 65% 감소</strong>시키며 엔터프라이즈 배포가 가능한 수준에 도달했다.</p>
+
+                <hr>
+
+                <h2>4. 용도별 추천</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>용도</th>
+                            <th>추천 모델</th>
+                            <th>이유</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>글쓰기</strong></td>
+                            <td>ChatGPT</td>
+                            <td>다양한 스타일 전환, DALL-E 연동</td>
+                        </tr>
+                        <tr>
+                            <td><strong>코딩</strong></td>
+                            <td>Claude</td>
+                            <td>SWE-bench 최상위, 200K 컨텍스트</td>
+                        </tr>
+                        <tr>
+                            <td><strong>리서치</strong></td>
+                            <td>Gemini</td>
+                            <td>Google 검색 Grounding, 1M 토큰</td>
+                        </tr>
+                        <tr>
+                            <td><strong>트렌드</strong></td>
+                            <td>Grok</td>
+                            <td>X 실시간 데이터 접근</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h2>5. 현실적 조언 — 조합의 기술</h2>
+                <p>2026년 AI 활용의 핵심은 <strong>단일 모델 의존이 아니라 상황별 전환</strong>이다. 네 LLM 모두 무료 티어를 제공하므로, 다음과 같은 조합이 가능하다:</p>
+                <ul>
+                    <li><strong>초안은 Claude</strong>로 쓰고, <strong>팩트 체크는 Gemini</strong>(Google 검색 Grounding)로 한다.</li>
+                    <li><strong>코드는 Claude Code</strong>로 짜고, <strong>실행·시각화는 ChatGPT 코드 인터프리터</strong>로 한다.</li>
+                    <li><strong>여론·반응은 Grok</strong>으로 파악하고, <strong>정리·보고서는 Claude</strong>로 마무리한다.</li>
+                </ul>
+                <p>유료 구독 전략: <strong>가장 자주 쓰는 하나에 유료 결제, 나머지는 무료 범위 내 보조</strong>가 비용 대비 효율적이다.</p>
+
+                <hr>
+
+                <h2>마치며</h2>
+                <p>GPT-5.2, Claude 4.5, Gemini 3, Grok 4.1 — 네 모델 모두 1년 전과 비교하면 완전히 다른 수준에 도달했다. 분기마다 순위가 뒤바뀌는 이 시장에서 중요한 건 "어떤 AI가 최고인가"가 아니라 <strong>"내 작업에 어떤 AI가 맞는가"</strong>다.</p>
+            </article>
+
+            <!-- Article Footer -->
+            <footer class="article-footer">
+                <div class="article-tags">
+                    <span class="tag">LLM</span>
+                    <span class="tag">AI비교</span>
+                    <span class="tag">ChatGPT</span>
+                    <span class="tag">Claude</span>
+                    <span class="tag">Gemini</span>
+                    <span class="tag">Grok</span>
+                </div>
+            </footer>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <div class="container">
+                    <h3 class="related-title">Related</h3>
+                    <div class="grid grid-2">
+                        <a href="llm-memory-feature-off.html" class="article-card">
+                            <div class="card-content">
+                                <span class="card-category">TECH</span>
+                                <h3 class="card-title">LLM 메모리 기능을 끄세요</h3>
+                            </div>
+                        </a>
+                        <a href="construction-ai-agent.html" class="article-card">
+                            <div class="card-content">
+                                <span class="card-category">TECH</span>
+                                <h3 class="card-title">건설사 직원들이 AI에 더 잘 적응하는 이유</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-logo">DLOG</div>
+                <p class="footer-text">&copy; 2026 DLOG. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
