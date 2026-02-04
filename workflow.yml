@@ -1,0 +1,185 @@
+# lindonlin 블로그 워크플로우
+# Claude가 글 관리 시 참조하는 파일
+
+# ===========================================
+# 현재 글 목록
+# ===========================================
+articles:
+  - slug: cleaning-and-cowardice
+    title: "청소와 비겁함"
+    subtitle: "눈에 보이는 문제를 외면하는 행위에 대하여"
+    category: essay
+    date: "2026-02-01"
+    reading_time: "4분"
+    tags: [청소, 비겁함, 아크라시아, 회피]
+    featured: true  # 히어로 섹션에 표시
+
+  - slug: llm-comparison-guide
+    title: "ChatGPT vs Claude vs Gemini vs Grok"
+    subtitle: "2026년 1월 기준, 주요 LLM 4종의 최신 모델·가격·실사용 차이를 정리한 실전 가이드"
+    category: tech
+    date: "2026-01-29"
+    reading_time: "12분"
+    tags: [LLM, ChatGPT, Claude, Gemini, Grok]
+
+  - slug: gen-z-quality-lifestyle
+    title: "질적 풍요의 시대"
+    subtitle: "미국 Gen Z가 정의하는 '나' 중심의 삶"
+    category: trend
+    date: "2026-01-30"
+    reading_time: "12분"
+    tags: [GenZ, 질적풍요, 트렌드, 슬로우테크]
+
+  - slug: korean-hiphop-history
+    title: "한국 힙합의 역사: 1989-2026"
+    subtitle: "30년 통사 — 태동기부터 현재까지"
+    category: trend
+    date: "2026-02-01"
+    reading_time: "25분"
+    tags: [한국힙합, 힙합역사, 쇼미더머니, K-FLIP]
+
+  - slug: construction-ai-agent
+    title: "건설사 직원들이 AI에 더 잘 적응하는 이유"
+    subtitle: "AI 에이전트 시대의 핵심 역량은 코딩이 아니다. 매니징이다."
+    category: tech
+    date: "2026-02-01"
+    reading_time: "10분"
+    tags: [AI에이전트, 건설업, 오케스트레이션, 멀티에이전트]
+
+  - slug: dimensional-physics
+    title: "같은 하루가 달라지는 차원 물리학"
+    subtitle: "인지하는 축의 수가 삶의 풍요를 결정한다"
+    category: essay
+    date: "2026-02-01"
+    reading_time: "8분"
+    tags: [차원물리학, 인지, 플랫랜드, 다차원적사고]
+
+  - slug: hiphop-essay
+    title: "난 왜 10년 넘게 힙합을 좋아할까"
+    subtitle: "힙합 쇠퇴론에 대한 개인적 반론. 감시사회에서의 정서적 해방감."
+    category: essay
+    date: "2026-01-31"
+    reading_time: "15분"
+    tags: [힙합, 에세이, 감시사회, 해방감]
+
+  - slug: llm-memory-feature-off
+    title: "LLM 메모리 기능을 끄세요"
+    subtitle: "메모리 기능은 당신의 AI를 더 똑똑하게 만드는 게 아니라 더 멍청하게 만들고 있다."
+    category: tech
+    date: "2026-01-29"
+    reading_time: "10분"
+    tags: [LLM, 메모리, 프롬프트엔지니어링]
+
+# ===========================================
+# 글 추가 워크플로우
+# ===========================================
+add_article:
+  steps:
+    - step: 1
+      action: "articles/ 폴더에 HTML 파일 생성"
+      template: |
+        파일명: articles/{slug}.html
+        기존 글(예: cleaning-and-cowardice.html) 복사 후 수정:
+        - <title> 태그
+        - meta description
+        - article-category (카테고리에 맞게 active 클래스 조정)
+        - article-title, article-subtitle
+        - article-meta (날짜, 읽기 시간)
+        - article-content (본문)
+        - article-tags
+
+    - step: 2
+      action: "index.html에 카드 추가"
+      location: "articlesGrid div 내부 (약 54-160 라인)"
+      template: |
+        <a href="articles/{slug}.html" class="article-card" data-category="{category}">
+            <div class="card-image">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg, #1a1a1a 0%, #333 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:600;">{LABEL}</div>
+            </div>
+            <div class="card-content">
+                <span class="card-category">{CATEGORY}</span>
+                <h3 class="card-title">{title}</h3>
+                <p class="card-excerpt">{subtitle}</p>
+                <div class="card-meta">
+                    <time datetime="{date}">{date_formatted}</time>
+                </div>
+            </div>
+        </a>
+
+    - step: 3
+      action: "workflow.yml의 articles 목록에 추가"
+
+    - step: 4
+      action: "커밋 & 푸시"
+      command: "git add -A && git commit -m 'Add article: {title}' && git push"
+
+# ===========================================
+# 글 삭제 워크플로우
+# ===========================================
+delete_article:
+  steps:
+    - step: 1
+      action: "articles/{slug}.html 파일 삭제"
+
+    - step: 2
+      action: "index.html에서 해당 카드 삭제"
+      note: "href=\"articles/{slug}.html\" 로 검색"
+
+    - step: 3
+      action: "히어로 섹션 확인"
+      note: "삭제하는 글이 featured면 다른 글로 교체"
+
+    - step: 4
+      action: "workflow.yml의 articles 목록에서 제거"
+
+    - step: 5
+      action: "커밋 & 푸시"
+      command: "git add -A && git commit -m 'Delete article: {title}' && git push"
+
+# ===========================================
+# 글 수정 워크플로우
+# ===========================================
+edit_article:
+  steps:
+    - step: 1
+      action: "articles/{slug}.html 파일 수정"
+
+    - step: 2
+      action: "제목/요약 변경 시 index.html 카드도 수정"
+
+    - step: 3
+      action: "workflow.yml 메타데이터 업데이트"
+
+    - step: 4
+      action: "커밋 & 푸시"
+
+# ===========================================
+# 히어로(Featured) 글 변경
+# ===========================================
+change_featured:
+  steps:
+    - step: 1
+      action: "index.html의 hero 섹션 수정 (약 33-48 라인)"
+      fields:
+        - hero-link href
+        - hero-category
+        - hero-title
+        - hero-excerpt
+        - hero-meta (날짜, 읽기 시간)
+
+    - step: 2
+      action: "workflow.yml에서 featured: true 변경"
+
+# ===========================================
+# 카테고리별 색상 가이드
+# ===========================================
+category_colors:
+  tech:
+    gradient: "linear-gradient(135deg, #1a1a1a 0%, #333 100%)"
+    text_color: "#fff"
+  essay:
+    gradient: "linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 100%)"
+    text_color: "#fff"
+  trend:
+    gradient: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)"
+    text_color: "#fff"
